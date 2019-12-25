@@ -62,10 +62,13 @@ Overview of things I have used:
 
 #### Post installation
 
-http://localhost:8500/ - Check the health of all 5 service registered in consul discovery.
+Hit - http://localhost:8500/ 
+Check the health of all 5 service registered in consul discovery.
+![Image of Consul service discovery](https://github.com/tamdilip/nestjs-microservice-angular/raw/master/frontend/src/assets/consul.png)
 
-http://localhost:4200/ - Create a user (via postman for now) and login to dasboard UI.
-
+Hit - http://localhost:4200/ 
+Create a user (via postman for now) and login to dasboard UI.
+![Image of Angular Login UI](https://github.com/tamdilip/nestjs-microservice-angular/raw/master/frontend/src/assets/login.png)
 
 **Happy coding :) !!**
 
