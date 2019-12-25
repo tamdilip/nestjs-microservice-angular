@@ -1,7 +1,7 @@
 web:
   serviceId: null
-  serviceName: hackathon-auth-service
-  port: 8082
+  serviceName: hackathon-metrics-service
+  port: 8084
 consul:
   host: localhost
   port: 8500
@@ -24,7 +24,3 @@ dataSource:
   database: nest
   synchronize: true
   maxQueryExecutionTime: 1000
-gateway:
-  routes:
-    - id: user
-      uri: lb://nestcloud-user-service
