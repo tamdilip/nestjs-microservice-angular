@@ -1,0 +1,39 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+  <mdb-navbar-brand>
+    <a class="navbar-brand" href="#">HACKATHON</a>
+  </mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngIf="userRole === 'admin'">
+        <a class="nav-link waves-light" [routerLink]="['reports']" mdbWavesEffect>Reports</a>
+      </li>
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          Metrics
+          <span class="caret"></span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" [routerLink]="['metrics/participation']" mdbWavesEffect>Participation</a>
+          <a class="dropdown-item waves-light" [routerLink]="['metrics/engagement']" mdbWavesEffect>Engagement</a>
+          <a class="dropdown-item waves-light" [routerLink]="['metrics/acquisition']" mdbWavesEffect>Acquisition</a>
+          <a class="dropdown-item waves-light" [routerLink]="['metrics/retention']" mdbWavesEffect>Retention</a>
+          <a class="dropdown-item waves-light" [routerLink]="['metrics/generic']" mdbWavesEffect>Generic</a>
+        </div>
+      </li>
+    </ul>
+    <span class="navbar-text white-text">
+      <li class="nav-item dropdown btn-group" dropdown>
+        <a dropdownToggle type="button" class="btn-lg nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="user-cog"></mdb-icon>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" *ngIf="userRole === 'admin'" [routerLink]="['reports']" mdbWavesEffect>Admin</a>
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item waves-light" (click)="logout()" mdbWavesEffect>Logout</a>
+        </div>
+      </li>
+    </span>
+  </links>
+</mdb-navbar>
+<router-outlet></router-outlet>

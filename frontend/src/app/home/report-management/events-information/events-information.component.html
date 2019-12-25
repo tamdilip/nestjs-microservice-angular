@@ -1,0 +1,95 @@
+<div class="container-fluid">
+  <div class="row py-4">
+    <div class="col-md-10">
+      <div>* The report should be uploaded in the specified format -
+        <a target="_self" href="http://localhost:8081/hackathon/file/download/template/Hackathon%20Event%20Information.xlsx">
+          Sample template
+          <mdb-icon class="ml-2" fas icon="download"></mdb-icon>
+        </a>
+      </div>
+      <div class="progress" *ngIf="percentDone">
+        <div class="progress-bar" role="progressbar" [style.width]="percentDone+'%'" aria-valuemin="0"
+          aria-valuemax="100">
+          <span *ngIf="uploadSuccess">
+            Upload Successful !!
+          </span>
+          <span *ngIf="!uploadSuccess && percentDone">
+            Uploading {{percentDone}}%
+          </span>
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" (change)="updatedSelectedFile($event.target.files)">
+          <label class="custom-file-label">Upload report</label>
+        </div>
+        <button type="button" class="my-0 mr-0 py-0 px-3 float-right" mdbBtn color="primary" mdbWavesEffect
+          (click)="uploadReport()">
+          <mdb-icon fas icon="cloud-upload-alt"></mdb-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table" mdbTable>
+          <thead class="thead-dark">
+            <tr>
+              <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr mdbTableCol *ngFor="let el of elements">
+              <td data-toggle="tooltip" title={{el.eventId}}>
+                {{el.eventId}}
+              </td>
+              <td data-toggle="tooltip" title={{el.baseLocation}}>
+                {{el.baseLocation}}
+              </td>
+              <td data-toggle="tooltip" title={{el.beneficiaryName}}>
+                {{el.beneficiaryName}}
+              </td>
+              <td data-toggle="tooltip" title={{el.councilName}}>
+                {{el.councilName}}
+              </td>
+              <td data-toggle="tooltip" title={{el.eventName}}>
+                {{el.eventName}}
+              </td>
+              <td data-toggle="tooltip" title={{el.eventDescription}}>
+                {{el.eventDescription}}
+              </td>
+              <td data-toggle="tooltip" title={{el.eventDate}}>
+                {{el.eventDate}}
+              </td>
+              <td data-toggle="tooltip" title={{el.employeeId}}>
+                {{el.employeeId}}
+              </td>
+              <td data-toggle="tooltip" title={{el.employeeName}}>
+                {{el.employeeName}}
+              </td>
+              <td data-toggle="tooltip" title={{el.volunteerHours}}>
+                {{el.volunteerHours}}
+              </td>
+              <td data-toggle="tooltip" title={{el.travelHours}}>
+                {{el.travelHours}}
+              </td>
+              <td data-toggle="tooltip" title={{el.livesImpacted}}>
+                {{el.livesImpacted}}
+              </td>
+              <td data-toggle="tooltip" title={{el.businessUnit}}>
+                {{el.businessUnit}}
+              </td>
+              <td data-toggle="tooltip" title={{el.status}}>
+                {{el.status}}
+              </td>
+              <td data-toggle="tooltip" title={{el.IIEP}}>
+                {{el.IIEP}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

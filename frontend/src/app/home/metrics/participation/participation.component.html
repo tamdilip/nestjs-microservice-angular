@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center text-uppercase my-3">Participation Metrics</h2>
+    </div>
+    <div class="col-md-12 text-center">
+      <h4 class="text-center text-uppercase my-3">Filter by</h4>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" class="custom-control-input" id="geography" name="metricsFilter" mdbInput>
+        <label class="custom-control-label" for="geography">Geography</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" class="custom-control-input" id="bu" name="metricsFilter" mdbInput>
+        <label class="custom-control-label" for="bu">Business Unit</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" class="custom-control-input" id="focus" name="metricsFilter" mdbInput>
+        <label class="custom-control-label" for="focus">Focus Area</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" class="custom-control-input" id="time" name="metricsFilter" mdbInput>
+        <label class="custom-control-label" for="time">Time Period</label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div style="display: block">
+        <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions" [legend]="true">
+        </canvas>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div style="display: block">
+        <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions" [legend]="true">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
