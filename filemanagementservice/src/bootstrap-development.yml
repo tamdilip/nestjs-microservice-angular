@@ -1,0 +1,17 @@
+web:
+  serviceId: null
+  serviceName: hackathon-filemanagement-service
+  port: 8083
+consul:
+  host: localhost
+  port: 8500
+  discoveryHost: localhost
+  health_check:
+    timeout: 1s
+    interval: 10s
+    route: /health
+  max_retry: 5
+  retry_interval: 5000
+  config:
+    key: config__{serviceName}__{env}
+    retry: 5
