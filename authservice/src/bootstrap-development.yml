@@ -1,0 +1,30 @@
+web:
+  serviceId: null
+  serviceName: hackathon-auth-service
+  port: 8082
+consul:
+  host: localhost
+  port: 8500
+  discoveryHost: localhost
+  health_check:
+    timeout: 1s
+    interval: 10s
+    route: /health
+  max_retry: 5
+  retry_interval: 5000
+  config:
+    key: config__{serviceName}__{env}
+    retry: 5
+dataSource:
+  type: mongodb
+  host: ds221095.mlab.com
+  port: 21095
+  username: tamdilip
+  password: xxxx
+  database: nest
+  synchronize: true
+  maxQueryExecutionTime: 1000
+gateway:
+  routes:
+    - id: user
+      uri: lb://nestcloud-user-service
