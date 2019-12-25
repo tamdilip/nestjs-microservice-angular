@@ -1,0 +1,25 @@
+web:
+  serviceId: null
+  serviceName: hackathon-apigateway-service
+  port: 8081
+consul:
+  host: localhost
+  port: 8500
+  discoveryHost: localhost
+  health_check:
+    timeout: 1s
+    interval: 10s
+    route: /health
+  max_retry: 5
+  retry_interval: 5000
+  config:
+    key: config__{serviceName}__{env}
+    retry: 5
+gateway:
+  routes:
+    - id: auth
+      uri: lb://hackathon-auth-service
+    - id: file
+      uri: lb://hackathon-filemanagement-service
+    - id: metrics
+      uri: lb://hackathon-metrics-service
